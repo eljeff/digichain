@@ -915,14 +915,17 @@ function serializeSelected(event, method = 'LR') {
     }, 250);
 }
 
-function pitchUpSelected(event) {
+function pitchUpSelected(event, classicMode = false) {
     files.forEach(f => f.meta.checked ? f.source?.stop() : '');
     document.getElementById('loadingText').textContent = 'Processing';
     document.body.classList.add('loading');
+    const classicModifier = 45/33.333; // approximate change on turntable from 33rpm to 45rpm
+    let rate = classicMode ? classicModifier : 2;
+    let steps = classicMode ? -(12 / classicModifier) : -12;
     setTimeout(() => {
         const selected = files.filter(f => f.meta.checked);
         selected.forEach((f, idx) => {
-            editor.perSamplePitch(event, 2, -12, f, false);
+            editor.perSamplePitch(event, rate, steps, f, false);
             if (idx === selected.length - 1) {
                 document.body.classList.remove('loading');
             }

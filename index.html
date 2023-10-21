@@ -218,12 +218,15 @@
                     <button title="Pitch all selected up by 1 octave." onclick="digichain.pitchUpSelected(event)"
                             class="button-outline">Pitch Up an Octave
                     </button>
+                    <button title="Pitch all selected up from 33 to 45rpm." onclick="digichain.pitchUpSelected(event, true)"
+                            class="button-outline">Pitch Up 45rpm
+                    </button>
+                    <br>
+
                     <button title="Add a reversed version of the sample to the end of itself."
                             onclick="digichain.pingPongSelected(event)"
                             class="button-outline">Ping-Pong
                     </button>
-                    <br>
-
                     <button title="Create small fade-in on all selected samples."
                             onclick="digichain.fadeSelected(event, 'in')"
                             class="button-outline">Fade In
@@ -232,11 +235,11 @@
                             onclick="digichain.fadeSelected(event, 'out')"
                             class="button-outline">Fade Out
                     </button>
+                    <br>
+
                     <button title="Introduces noise into the sample." onclick="digichain.fuzzSelected(event)"
                             class="button-outline">Fuzz
                     </button>
-                    <br>
-
                     <button title="Crushes the sample, shift+click to set custom amount between 1 and 128 (default is 25)."
                             onclick="digichain.crushSelected(event)"
                             class="button-outline has-shift-mod">Crush
@@ -245,12 +248,12 @@
                             onclick="digichain.stretchSelected(event, true)"
                             class="button-outline has-shift-mod">Stretch Shortest
                     </button>
+                    <br>
+
                     <button title="Stretch all selected samples to the same length as the longest sample in the selection. Hold shift to set a custom length in seconds."
                             onclick="digichain.stretchSelected(event)"
                             class="button-outline has-shift-mod">Stretch Longest
                     </button>
-                    <br>
-
                     <button title="Serialize stereo samples to mono, left and right channels."
                             onclick="digichain.serializeSelected(event, 'LR')"
                             class="button-outline">Serialize L/R
@@ -259,11 +262,12 @@
                             onclick="digichain.serializeSelected(event, 'SD')"
                             class="button-outline">Serialize S/M
                     </button>
+                    <br>
+
                     <button title="Serialize stereo samples to mono, left and right channels, side and mid."
                             onclick="digichain.serializeSelected(event, 'LRSD')"
                             class="button-outline">Serialize L/R/S/M
                     </button>
-                    <br>
                     <button title="Shorten the file path and name of selected."
                             onclick="digichain.shortenNameSelected(event)"
                             class="button-outline">Shorten Names
@@ -272,6 +276,7 @@
                             onclick="digichain.shortenNameSelected(event, true)"
                             class="button-outline">Restore Names
                     </button>
+                    <br>
                 </div>
                 <button title="Merge/mix-down all selected" onclick="digichain.showMergePanel(event)"
                         class="button button-outline" style="width: 23%;">Merge
